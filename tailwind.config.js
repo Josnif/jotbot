@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': '#FF7000',
+        'skin': '#06071B'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,5 +18,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

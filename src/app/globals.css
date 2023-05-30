@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,39 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.cc_content {
+  content: '';
+}
+
+.hexagon {
+  @apply bg-[url('/assets/img/hexagon.svg')];
+}
+
+
+.bg_hero {
+  @apply relative z-50
+}
+.bg_hero::before {
+  @apply bg-[url('/assets/img/hero.png')] cc_content bg-no-repeat bg-cover bg-center w-full h-full absolute inset-0 -z-20;
+}
+
+.bg_hero::after {
+  @apply cc_content w-full h-full absolute inset-0 -z-10;
+  background: linear-gradient(180deg, #06071B -1.51%, rgba(6, 7, 27, 0) 85.21%);
+}
+
+.active_link {
+  @apply text-primary;
+}
+
+a.active_link::after {
+  @apply rounded-full bg-primary w-1 h-1 cc_content absolute -bottom-1;
+}
+
+.hero_head_text {
+  @apply text-white font-normal text-6xl w-[350px];
+  line-height: 150%;
+  letter-spacing: 0.02em;
 }
