@@ -60,3 +60,7 @@ a.active_link::after {
   line-height: 150%;
   letter-spacing: 0.02em;
 }
+
+.main_button_type {
+  @apply bg-primary hover:bg-primary/50 text-white text-[16px] leading-7 font-medium rounded-[30px] py-2 px-5 w-auto flex flex-row justify-center items-center;
+}

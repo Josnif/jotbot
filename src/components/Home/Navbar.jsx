@@ -46,12 +46,13 @@ const Navbar = () => {
                 ))}
             </div>
 
-            <div className='flex flex-row items-center gap-3'>
+            <div className='flex flex-row items-center gap-3 md:gap-6'>
                 <div className='flex items-center gap-2'>
                     <Globe size={24} color='white' stroke='#fff' />
                     <span className='text-white font-sm font-[700] uppercase'>EN</span>
                 </div>
-                <button className='flex items-center gap-2 py-2 px-[22px] bg-primary hover:bg-primary/50 rounded-[100px] text-white'>
+                {/* <button className='flex items-center gap-2 py-2 bg-primary rounded-[100px] text-white'> */}
+                <button className='main_button_type px-[22px]'>
                     Login
                 </button>
             </div>

@@ -13,7 +13,7 @@ const Hero = () => {
           <h2 className='mb-3'>Machine</h2>
           <h2 className='mb-3'>intelligence</h2>
         </div> */}
-        <button className='bg-primary text-white text-[16px] leading-7 font-medium mt-12 rounded-[30px] py-2 px-2 w-auto flex flex-row justify-center items-center max-w-[160px]'>
+        <button className='main_button_type mt-12 max-w-[160px]'>
           <Play size={16} color='white' />
           <span>Play Demo</span>
         </button>
@@ -36,7 +36,7 @@ const Hero = () => {
           width={100}
           height={100}
           alt='subtract'
-          className='rotate-90 absolute -right-32 bottom-4'
+          className='rotate-90 absolute -right-24 bottom-4'
         />
       </div>
 
@@ -45,7 +45,7 @@ const Hero = () => {
         width={200}
         height={200}
         alt='robot hand'
-        className='hidden lg:block absolute top-52 right-0'
+        className='hidden md:block absolute top-52 right-0'
       />
     </div>
   )
