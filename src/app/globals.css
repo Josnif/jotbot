@@ -25,6 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+body {
+  @apply bg-skin;
+}
 
 .cc_content {
   content: '';
@@ -63,4 +66,27 @@ a.active_link::after {
 
 .main_button_type {
   @apply bg-primary hover:bg-primary/50 text-white text-[16px] leading-7 font-medium rounded-[30px] py-2 px-5 w-auto flex flex-row justify-center items-center;
+}
+
+.section_container {
+  @apply container mx-auto px-3 lg:px-3;
+} 
+
+.subtitle {
+  @apply text-primary text-base font-light;
+}
+
+.section_title {
+  @apply capitalize text-gray-200 font-semibold text-4xl;
+}
+
+.section_desc {
+  @apply text-sm font-normal text-gray-200;
+}
+
+.ellipse {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  width: 214px;
+  height: 214px;
 }
