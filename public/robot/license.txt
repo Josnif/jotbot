@@ -1,0 +1,11 @@
+Model Information:
+* title:	Robot
+* source:	https://sketchfab.com/3d-models/robot-3ef87ea771824f08980945ce90c35cc9
+* author:	SamanED (https://sketchfab.com/samaned)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Robot" (https://sketchfab.com/3d-models/robot-3ef87ea771824f08980945ce90c35cc9) by SamanED (https://sketchfab.com/samaned) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

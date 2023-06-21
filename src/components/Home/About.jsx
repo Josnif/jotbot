@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { RobotsCanvas } from '../canvas'
 
 const About = () => {
   return (
@@ -10,6 +11,10 @@ const About = () => {
                     <div className='border-[3px] w-[170px] h-[170px] border-white rounded-full'></div>
                 </div>
             </div>
+            <div className='absolute bottom-5 -right-12 hidden md:block'>
+                <RobotsCanvas scene='./security_robot/scene.gltf' scale={1} />
+            </div>
+            
             <p className='subtitle uppercase'>Who we are</p>
             <h4 className='section_title'>We Help To Get Solutions</h4>
 
