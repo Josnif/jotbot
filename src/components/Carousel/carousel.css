@@ -1,6 +1,6 @@
 .carousel {
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
     margin: 0 auto;
 }
 
@@ -12,12 +12,14 @@
 }
 
 .slide {
-    flex: 0 0 100%;
+    /* flex: 0 0 100%; */
+    display: none;
     transition: transform 0.3s ease-in-out;
 }
 
 .slide.active {
     transform: translateX(0);
+    display: block;
 }
 
 .controls {

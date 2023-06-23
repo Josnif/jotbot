@@ -12,7 +12,7 @@ const About = () => {
                 </div>
             </div>
             <div className='absolute bottom-5 -right-12 hidden md:block'>
-                <RobotsCanvas scene='./security_robot/scene.gltf' scale={1} />
+                <RobotsCanvas scene='./low_poly_humanoid_robot/scene.gltf' scale={1} />
             </div>
             
             <p className='subtitle uppercase'>Who we are</p>
