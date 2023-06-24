@@ -7,6 +7,8 @@ const Carousel = ({ controls=false, autoplay=false, speed=3000, slidesToShow = 1
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [total, setTotal] = useState(0);
+    const [isSlideshow, setIsSlideshow] = useState(false);
+
     const [visibleChildren, setVisibleChildren] = useState([])
 
     const handleClick = (index) => {
@@ -14,16 +16,20 @@ const Carousel = ({ controls=false, autoplay=false, speed=3000, slidesToShow = 1
     };
 
     const handlePrevious = () => {
-        setActiveIndex((prevIndex) => (prevIndex === 0 ? React.Children.count(children) - 1 : prevIndex - 1));
+        setActiveIndex((prevIndex) => (prevIndex === 0 ? total - 1 : prevIndex - 1));
     };
 
     const handleNext = () => {
-        setActiveIndex((prevIndex) => (prevIndex === (React.Children.count(children) - 1) ? 0 : prevIndex + 1));
+        setActiveIndex((prevIndex) => (prevIndex === (total - 1) ? 0 : prevIndex + 1));
     }
+
+    const toggleSlideshow = () => {
+        setIsSlideshow((prevValue) => !prevValue);
+    };      
 
     useEffect(() => { 
         setTotal(React.Children.count(children)); 
-        if (autoplay) {
+        if (autoplay && isSlideshow) {
             const autoPlayTimer = setInterval(() => {
                 handleNext();
             }, autoplayInterval)
@@ -34,21 +40,13 @@ const Carousel = ({ controls=false, autoplay=false, speed=3000, slidesToShow = 1
         } 
     }, [children, autoplayInterval]);
 
-    useEffect(() => {
-        const startIndex = activeIndex;
-        const endIndex = startIndex + slidesToShow;
-    
-        setVisibleChildren(React.Children.toArray(children).slice(startIndex, endIndex));
-    }, [])
-
-
     return (
-        <div className="carousel">
-            <div className="slides flex gap-8 items-center justify-center" index={activeIndex}>
+        <div className={`carousel ${isSlideshow ? 'slideshow' : ''}`}>
+            <div className="slides flex gap-8 items-center justify-center" style={{'--active-index': activeIndex}}>
                 {React.Children.map(children, (child, index) => {
                     const isActive = index >= activeIndex && index < activeIndex + slidesToShow;
                     return (
-                        <div key={index} className={`slide ${isActive ? 'active'  : ''} ${index}`}>
+                        <div key={index} className={`slide ${isActive ? 'active'  :  isSlideshow ? 'active' : ''} ${index}`}>
                             {child}
                         </div>
                     );
@@ -56,7 +54,7 @@ const Carousel = ({ controls=false, autoplay=false, speed=3000, slidesToShow = 1
             </div>
             {controls ? (
                 <div className="controls">
-                    <button onClick={handlePrevious}>Previous</button>
+                    <button className='bg-transparent text-primary' onClick={handlePrevious}>Previous</button>
                     <div className="dots">
                     {React.Children.map(children, (_, index) => {
                         if (index <= total - slidesToShow) {
@@ -71,7 +69,8 @@ const Carousel = ({ controls=false, autoplay=false, speed=3000, slidesToShow = 1
                     }
                     )}
                     </div>
-                    <button onClick={handleNext}>Next</button>
+                    <button className='bg-transparent text-primary' onClick={handleNext}>Next</button>
+                    <button className='bg-transparent text-primary' onClick={toggleSlideshow}>{isSlideshow ? 'Stop' : 'Start'} Slideshow</button>
                 </div>
             ) : null}
         </div>
