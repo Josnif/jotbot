@@ -1,4 +1,4 @@
-import './globals.css'
+import '../globals.css'
 import Navbar from '@/components/Navbar'
 import { ChatProvider } from '@/providers'
 import { Inter } from 'next/font/google'
